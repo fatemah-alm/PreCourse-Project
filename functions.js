@@ -19,7 +19,9 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  // Your code here
+  let sum = 0;
+  numbers.forEach((number) => (number % 2 == 1 ? (sum += number) : false));
+  return sum;
 }
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
@@ -37,7 +39,14 @@ function sumOdds(numbers) {
  * Another Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  // Your code here
+  let counter = 0;
+  string = [...string];
+
+  string.forEach((letter) => {
+    letter.toLowerCase() === c.toLowerCase() ? counter++ : counter == counter;
+  });
+
+  return counter;
 }
 // console.log(characterCount("Character Count is clever", "c"));
 
@@ -58,7 +67,8 @@ function characterCount(string, c) {
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
 function largestIncrement(numbers) {
-  // Your code here
+  // let inc = 0;
+  // numbers.forEach(number => )
 }
 // console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
@@ -74,7 +84,9 @@ function largestIncrement(numbers) {
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  // Your code here
+  return numbers.filter(
+    (number) => numbers.indexOf(number) > numbers.indexOf(x)
+  );
 }
 // console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
@@ -90,7 +102,7 @@ function afterX(numbers, x) {
  * Hint: Use string method .toUpperCase()
  */
 function abbreviate(firstName, lastName) {
-  // Your code here
+  return firstName.charAt(0).toUpperCase() + lastName.charAt(0).toUpperCase();
 }
 // console.log(abbreviate("miss", "Stephane"));
 
@@ -105,7 +117,7 @@ function abbreviate(firstName, lastName) {
  *
  */
 function isUpperCase(string) {
-  // Your code here
+  return string === string.toUpperCase() ? true : false;
 }
 
 // console.log(isUpperCase("JCREW"));
@@ -121,7 +133,7 @@ function isUpperCase(string) {
  *
  */
 function elementInArray(numbers, x) {
-  // Your code here
+  return numbers.some((number) => number === x);
 }
 // console.log(elementInArray([5, 6, 7], 8));
 
